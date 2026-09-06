@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>a.</title>
   <rect width="64" height="64" fill="#16191b"/>
-  <path d="M17 45 27 18h7l10 27h-7l-2-7H25l-2 7h-6Zm10-13h6l-3-9-3 9Zm19-14h5v27h-5z" fill="#e2e6e8"/>
+  <path
+    d="M26 22c-8 0-14 5.5-14 13s5 13 13 13c4.5 0 8-2 10-5v5h6V22h-6v5c-2-3-5.5-5-9-5Zm0 6c5 0 9 3 9 7s-4 7-9 7-8-3-8-7 3-7 8-7Z"
+    fill="#e2e6e8"
+    fill-rule="evenodd"
+  />
+  <circle cx="51" cy="44.5" r="3.5" fill="#e2e6e8"/>
 </svg>

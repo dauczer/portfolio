@@ -98,6 +98,6 @@ export const footerLinks: Record<Language, readonly {
 };
 
 export const documentTitles: LocalizedText = {
-  en: "Alex Daucourt — Data & Automation Engineer",
-  fr: "Alex Daucourt — Data & Automation Engineer",
+  en: "Alex Daucourt",
+  fr: "Alex Daucourt",
 };
