@@ -1,0 +1,7 @@
+node_modules
+dist
+source-media
+test-artifacts
+.DS_Store
+*.local
+*.tsbuildinfo

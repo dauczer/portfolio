@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#16191b"/>
+  <g fill="#e2e6e8" font-family="Roboto Mono, monospace" font-weight="300">
+    <text x="110" y="270" font-size="62">Alex Daucourt</text>
+    <text x="110" y="340" font-size="30" opacity=".72">Data + Automation + Internal Tools</text>
+    <text x="110" y="470" font-size="22" opacity=".34">Python · SQL · Applied data</text>
+  </g>
+</svg>
