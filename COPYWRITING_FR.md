@@ -28,14 +28,14 @@ Je travaille surtout avec Python et SQL pour automatiser des tâches et rendre l
 
 ## Index des projets
 
-000 Report Automation
-001 LoL Data Pipeline
-002 Football Scout Agent
-003 Tobit Fraud Model
-004 Ticket Workflow
-005 French Rap RAG
-006 Academic Projects
-007 macOS Portfolio — lien externe : https://playground.alexdaucourt.dev
+000 Automatisation rapports
+001 Pipeline data LoL
+002 Scout football
+003 Modèle fraude Tobit
+004 Suivi de tickets
+005 RAG rap français
+006 Projets académiques
+007 Portfolio macOS — lien externe : https://playground.alexdaucourt.dev
 
 ## Pied de page
 
@@ -52,7 +52,7 @@ Je travaille surtout avec Python et SQL pour automatiser des tâches et rendre l
 ---
 
 <!-- page:lol-weekly-data-pipeline -->
-# LoL Weekly Data Pipeline
+# Pipeline data LoL
 
 **Route :** `/work/lol-weekly-data-pipeline`  
 **Auteur affiché :** Alex Daucourt  
@@ -124,7 +124,7 @@ Le code source et les sorties publiées sont disponibles sur [GitHub](https://gi
 ---
 
 <!-- page:football-scout-agent -->
-# Football Scout Agent
+# Scout football
 
 **Route :** `/work/football-scout-agent`  
 **Auteur affiché :** Alex Daucourt  
@@ -214,7 +214,7 @@ Le code source, le schéma de données et les tests sont disponibles sur [GitHub
 ---
 
 <!-- page:caf-report-automation -->
-# CAF Report Automation
+# Automatisation rapports
 
 **Route :** `/work/caf-report-automation`  
 **Auteur affiché :** Alex Daucourt  
@@ -263,7 +263,7 @@ Projet professionnel — code et données non publics.
 ---
 
 <!-- page:french-rap-rag -->
-# French Rap RAG
+# RAG rap français
 
 **Route :** `/work/french-rap-rag`  
 **Auteur affiché :** Alex Daucourt  
@@ -335,7 +335,7 @@ Le code source, le pipeline d'indexation, l'API et les cas d'évaluation sont di
 ---
 
 <!-- page:ticket-workflow-prototype -->
-# Ticket Workflow Prototype
+# Suivi de tickets
 
 **Route :** `/work/ticket-workflow-prototype`  
 **Auteur affiché :** Alex Daucourt  
@@ -382,7 +382,7 @@ Prototype personnel lié à mon travail — utilisé localement, code non dispon
 ---
 
 <!-- page:tobit-fraud-targeting -->
-# Tobit Fraud Targeting Model
+# Modèle fraude Tobit
 
 **Route :** `/work/tobit-fraud-targeting`  
 **Auteur affiché :** Alex Daucourt  
@@ -427,7 +427,7 @@ Projet professionnel — code et données non publics.
 ---
 
 <!-- page:academic-projects -->
-# Academic Projects
+# Projets académiques
 
 **Route :** `/work/academic-projects`  
 **Auteur affiché :** Alex Daucourt  
@@ -439,7 +439,7 @@ Deux projets réalisés pendant mes études en mathématiques appliquées et dat
 
 Ils ne représentent pas nécessairement la manière dont je construirais les mêmes analyses aujourd'hui, mais ils documentent mes premiers travaux complets de text mining, de modélisation et d'interprétabilité.
 
-## 01 — French Rap Text Mining
+## 01 — Analyse textuelle du rap français
 
 Ce projet partait d'une question simple : peut-on distinguer une chanson de rap français d'une chanson pop uniquement à partir de ses paroles ? L'analyse réunissait environ 50 000 titres de rap et 60 000 titres pop issus de deux jeux de données publics.
 
@@ -453,7 +453,7 @@ Pour la partie prédictive, les paroles ont été vectorisées avec TF-IDF. Une 
 
 Les sources provenaient de deux jeux de données Kaggle consacrés au [rap français](https://www.kaggle.com/datasets/quentinlelan/french-rap-lyrics-several-dataset-union) et aux [paroles Genius](https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information). Le [rapport académique archivé](/reports/french-songs.pdf) détaille l'analyse originale.
 
-## 02 — Airbnb Price Classification
+## 02 — Classification des prix Airbnb
 
 Ce projet d'examen utilisait plus de 35 000 annonces Airbnb à Rio de Janeiro. La tâche consistait à prédire une catégorie de prix définie à partir des quantiles du jeu de données, plutôt qu'un prix exact.
 

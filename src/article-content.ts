@@ -1,4 +1,4 @@
-import { externalUrls, type Language } from "./content";
+import { externalUrls, projectTitles, type Language } from "./content";
 
 export const articleSlugs = [
   "lol-weekly-data-pipeline",
@@ -45,7 +45,7 @@ type LocalizedArticle = Record<Language, ArticleCopy>;
 
 const cafReportAutomation: LocalizedArticle = {
   fr: {
-    title: "CAF Report Automation",
+    title: projectTitles.cafReportAutomation.fr,
     date: "2024",
     intro: [
       "Une automatisation développée à la CAF de la Côte-d'Or pour remplacer un processus manuel de génération de rapports de territoire.",
@@ -98,7 +98,7 @@ const cafReportAutomation: LocalizedArticle = {
     note: "Projet professionnel — code et données non publics.",
   },
   en: {
-    title: "CAF Report Automation",
+    title: projectTitles.cafReportAutomation.en,
     date: "2024",
     intro: [
       "An automation developed at CAF de la Côte-d'Or to replace a manual process for generating local-area reports.",
@@ -154,7 +154,7 @@ const cafReportAutomation: LocalizedArticle = {
 
 const tobitFraudTargeting: LocalizedArticle = {
   fr: {
-    title: "Tobit Fraud Targeting Model",
+    title: projectTitles.tobitFraudTargeting.fr,
     date: "2024",
     intro: [
       "Un modèle statistique développé et testé à la CAF de la Côte-d'Or pour mieux prioriser les dossiers susceptibles de produire un impact financier.",
@@ -198,7 +198,7 @@ const tobitFraudTargeting: LocalizedArticle = {
     note: "Projet professionnel — code et données non publics.",
   },
   en: {
-    title: "Tobit Fraud Targeting Model",
+    title: projectTitles.tobitFraudTargeting.en,
     date: "2024",
     intro: [
       "A statistical model developed and tested at CAF de la Côte-d'Or to better prioritize cases likely to produce a financial impact.",
@@ -245,7 +245,7 @@ const tobitFraudTargeting: LocalizedArticle = {
 
 const academicProjects: LocalizedArticle = {
   fr: {
-    title: "Academic Projects",
+    title: projectTitles.academicProjects.fr,
     date: "2023",
     intro: [
       "Deux projets réalisés pendant mes études en mathématiques appliquées et data, conservés ici pour leur contexte et leur démarche.",
@@ -253,7 +253,7 @@ const academicProjects: LocalizedArticle = {
     ],
     sections: [
       {
-        title: "French Rap Text Mining",
+        title: "Analyse textuelle du rap français",
         index: "01",
         blocks: [
           { type: "paragraph", text: "Ce projet partait d'une question simple : peut-on distinguer une chanson de rap français d'une chanson pop uniquement à partir de ses paroles ? L'analyse réunissait environ 50 000 titres de rap et 60 000 titres pop issus de deux jeux de données publics." },
@@ -279,7 +279,7 @@ const academicProjects: LocalizedArticle = {
         ],
       },
       {
-        title: "Airbnb Price Classification",
+        title: "Classification des prix Airbnb",
         index: "02",
         blocks: [
           { type: "paragraph", text: "Ce projet d'examen utilisait plus de 35 000 annonces Airbnb à Rio de Janeiro. La tâche consistait à prédire une catégorie de prix définie à partir des quantiles du jeu de données, plutôt qu'un prix exact." },
@@ -303,7 +303,7 @@ const academicProjects: LocalizedArticle = {
     ],
   },
   en: {
-    title: "Academic Projects",
+    title: projectTitles.academicProjects.en,
     date: "2023",
     intro: [
       "Two projects completed during my applied mathematics and data studies, kept here for their context and methodology.",
@@ -364,7 +364,7 @@ const academicProjects: LocalizedArticle = {
 
 const lolWeeklyDataPipeline: LocalizedArticle = {
   fr: {
-    title: "LoL Weekly Data Pipeline",
+    title: projectTitles.lolWeeklyDataPipeline.fr,
     date: "2025",
     intro: [
       "Ce projet est un pipeline batch Python exécuté chaque semaine par GitHub Actions. Il analyse les matchs classés récents des joueurs dits \"high elo\" (Challenger et Grandmaster) sur le serveur européen et publie des snapshots JSON statiques.",
@@ -452,7 +452,7 @@ const lolWeeklyDataPipeline: LocalizedArticle = {
     ],
   },
   en: {
-    title: "LoL Weekly Data Pipeline",
+    title: projectTitles.lolWeeklyDataPipeline.en,
     date: "2025",
     intro: [
       "This project is a Python batch pipeline run every week by GitHub Actions. It analyzes recent ranked matches from so-called high-elo players (Challenger and Grandmaster) on the European server, and publishes static JSON snapshots.",
@@ -543,7 +543,7 @@ const lolWeeklyDataPipeline: LocalizedArticle = {
 
 const footballScoutAgent: LocalizedArticle = {
   fr: {
-    title: "Football Scout Agent",
+    title: projectTitles.footballScoutAgent.fr,
     date: "2025",
     intro: [
       "Football Scout Agent permet d'interroger en langage naturel près de 2 000 joueurs des cinq grands championnats européens.",
@@ -629,7 +629,7 @@ const footballScoutAgent: LocalizedArticle = {
     ],
   },
   en: {
-    title: "Football Scout Agent",
+    title: projectTitles.footballScoutAgent.en,
     date: "2025",
     intro: [
       "Football Scout Agent makes it possible to query nearly 2,000 players from Europe's Big Five leagues in natural language.",
@@ -718,7 +718,7 @@ const footballScoutAgent: LocalizedArticle = {
 
 const frenchRapRag: LocalizedArticle = {
   fr: {
-    title: "French Rap RAG",
+    title: projectTitles.frenchRapRag.fr,
     date: "2025",
     intro: [
       "Un moteur RAG qui permet d'interroger les paroles de 22 artistes de rap français et d'obtenir une réponse reliée aux morceaux utilisés comme sources.",
@@ -782,7 +782,7 @@ const frenchRapRag: LocalizedArticle = {
     ],
   },
   en: {
-    title: "French Rap RAG",
+    title: projectTitles.frenchRapRag.en,
     date: "2025",
     intro: [
       "A RAG engine for querying lyrics from 22 French rap artists and receiving an answer linked to the songs used as sources.",
@@ -849,7 +849,7 @@ const frenchRapRag: LocalizedArticle = {
 
 const ticketWorkflowPrototype: LocalizedArticle = {
   fr: {
-    title: "Ticket Workflow Prototype",
+    title: projectTitles.ticketWorkflowPrototype.fr,
     date: "2026",
     intro: [
       "Une application web locale que j'ai construite pour simplifier le suivi de mon propre flux de tickets d'intégration chez Agicap.",
@@ -893,7 +893,7 @@ const ticketWorkflowPrototype: LocalizedArticle = {
     note: "Prototype personnel lié à mon travail — utilisé localement, code non disponible.",
   },
   en: {
-    title: "Ticket Workflow Prototype",
+    title: projectTitles.ticketWorkflowPrototype.en,
     date: "2026",
     intro: [
       "A local web application I built to make my own integration-ticket workflow at Agicap easier to manage.",

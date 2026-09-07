@@ -48,7 +48,7 @@ function languageSwitchMarkup(language: Language, className = ""): string {
 function projectMarkup(language: Language): string {
   return projects
     .map(({ index, title, href, external }) => {
-      const body = `<span class="work-item__index">${index}</span><span class="work-item__title">${title}</span>`;
+      const body = `<span class="work-item__index">${index}</span><span class="work-item__title">${title[language]}</span>`;
 
       if (!href) {
         return `<li class="work-item work-item--inactive" aria-disabled="true">${body}</li>`;

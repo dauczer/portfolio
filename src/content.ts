@@ -1,13 +1,48 @@
 export type Language = "en" | "fr";
 
-type LocalizedText = Record<Language, string>;
+export type LocalizedText = Record<Language, string>;
 
 export type Project = {
   index: string;
-  title: string;
+  title: LocalizedText;
   href?: string;
   external?: boolean;
 };
+
+export const projectTitles = {
+  cafReportAutomation: {
+    en: "Report Automation",
+    fr: "Automatisation rapports",
+  },
+  lolWeeklyDataPipeline: {
+    en: "LoL Data Pipeline",
+    fr: "Pipeline data LoL",
+  },
+  footballScoutAgent: {
+    en: "Football Scout Agent",
+    fr: "Scout football",
+  },
+  tobitFraudTargeting: {
+    en: "Tobit Fraud Model",
+    fr: "Modèle fraude Tobit",
+  },
+  ticketWorkflowPrototype: {
+    en: "Ticket Workflow",
+    fr: "Suivi de tickets",
+  },
+  frenchRapRag: {
+    en: "French Rap RAG",
+    fr: "RAG rap français",
+  },
+  academicProjects: {
+    en: "Academic Projects",
+    fr: "Projets académiques",
+  },
+  macosPortfolio: {
+    en: "macOS Portfolio",
+    fr: "Portfolio macOS",
+  },
+} as const satisfies Record<string, LocalizedText>;
 
 export const externalUrls = {
   canonicalSite: "https://alexdaucourt.dev",
@@ -55,16 +90,16 @@ export const copy: Record<
 };
 
 export const projects: readonly Project[] = [
-  { index: "000", title: "Report Automation", href: "/work/caf-report-automation" },
-  { index: "001", title: "LoL Data Pipeline", href: "/work/lol-weekly-data-pipeline" },
-  { index: "002", title: "Football Scout Agent", href: "/work/football-scout-agent" },
-  { index: "003", title: "Tobit Fraud Model", href: "/work/tobit-fraud-targeting" },
-  { index: "004", title: "Ticket Workflow", href: "/work/ticket-workflow-prototype" },
-  { index: "005", title: "French Rap RAG", href: "/work/french-rap-rag" },
-  { index: "006", title: "Academic Projects", href: "/work/academic-projects" },
+  { index: "000", title: projectTitles.cafReportAutomation, href: "/work/caf-report-automation" },
+  { index: "001", title: projectTitles.lolWeeklyDataPipeline, href: "/work/lol-weekly-data-pipeline" },
+  { index: "002", title: projectTitles.footballScoutAgent, href: "/work/football-scout-agent" },
+  { index: "003", title: projectTitles.tobitFraudTargeting, href: "/work/tobit-fraud-targeting" },
+  { index: "004", title: projectTitles.ticketWorkflowPrototype, href: "/work/ticket-workflow-prototype" },
+  { index: "005", title: projectTitles.frenchRapRag, href: "/work/french-rap-rag" },
+  { index: "006", title: projectTitles.academicProjects, href: "/work/academic-projects" },
   {
     index: "007",
-    title: "macOS Portfolio",
+    title: projectTitles.macosPortfolio,
     href: "https://playground.alexdaucourt.dev",
     external: true,
   },
