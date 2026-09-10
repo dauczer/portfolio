@@ -44,7 +44,7 @@ export type LolSnapshot = {
     available: boolean;
     same_patch: boolean;
     previous_patch?: string;
-    reason?: string;
+    reason?: string | null;
   };
   roles: Record<LolRole, { leaders: LolLeader[] }>;
   movers: {
@@ -190,7 +190,9 @@ export function isLolSnapshot(value: unknown): value is LolSnapshot {
     || typeof value.comparison.available !== "boolean"
     || typeof value.comparison.same_patch !== "boolean"
     || (value.comparison.previous_patch !== undefined && typeof value.comparison.previous_patch !== "string")
-    || (value.comparison.reason !== undefined && typeof value.comparison.reason !== "string")
+    || (value.comparison.reason !== undefined
+      && value.comparison.reason !== null
+      && typeof value.comparison.reason !== "string")
     || !isRecord(value.roles)
     || !isRecord(value.movers)
     || !Array.isArray(value.movers.up)
