@@ -481,7 +481,7 @@ Le [rapport académique archivé](/reports/rio-airbnb.pdf) présente la prépara
 
 Filament est un jeu d'énigmes quotidiennes : une énigme par jour, en logique, probabilités ou petites maths. La réponse est toujours un nombre et on a trois essais. Après chaque erreur, le jeu indique s'il faut viser plus haut ou plus bas et débloque un indice.
 
-Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur playfilament.com.
+Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur [playfilament.com](https://playfilament.com).
 
 > **Texte alternatif de l’image :** Deux écrans de Filament sur mobile : l'énigme du jour et l'écran des règles
 >

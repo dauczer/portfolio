@@ -848,7 +848,8 @@ body.route-article #app {
   white-space: pre;
 }
 
-.article-section a:not(.article-metadata a) {
+.article-section a:not(.article-metadata a),
+.article-intro a {
   color: inherit;
   text-decoration: underline;
   text-decoration-color: rgba(226, 230, 232, 0.3);
@@ -861,7 +862,9 @@ body.route-article #app {
 }
 
 .article-section a:not(.article-metadata a):hover,
-.article-section a:not(.article-metadata a):focus-visible {
+.article-section a:not(.article-metadata a):focus-visible,
+.article-intro a:hover,
+.article-intro a:focus-visible {
   color: #fff;
   text-decoration-color: var(--color-underline-hover);
 }

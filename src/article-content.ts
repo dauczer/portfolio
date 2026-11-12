@@ -18,6 +18,12 @@ export type ArticleTextSegment = {
   href?: string;
 };
 
+export type ArticleIntroParagraph = string | readonly ArticleTextSegment[];
+
+export function introText(paragraph: ArticleIntroParagraph): string {
+  return typeof paragraph === "string" ? paragraph : paragraph.map(({ text }) => text).join("");
+}
+
 export type ArticleBlock =
   | { type: "paragraph"; text: string }
   | { type: "rich-paragraph"; segments: readonly ArticleTextSegment[] }
@@ -36,7 +42,7 @@ export type ArticleSectionContent = {
 export type ArticleCopy = {
   title: string;
   date: string;
-  intro: readonly string[];
+  intro: readonly ArticleIntroParagraph[];
   featurePlaceholder?: string;
   sections: readonly ArticleSectionContent[];
   note?: string;
@@ -945,7 +951,11 @@ const filament: LocalizedArticle = {
     date: "2026",
     intro: [
       "Filament est un jeu d'énigmes quotidiennes : une énigme par jour, en logique, probabilités ou petites maths. La réponse est toujours un nombre et on a trois essais. Après chaque erreur, le jeu indique s'il faut viser plus haut ou plus bas et débloque un indice.",
-      "Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur playfilament.com.",
+      [
+        { text: "Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur " },
+        { text: "playfilament.com", href: externalUrls.filamentSite },
+        { text: "." },
+      ],
     ],
     sections: [
       {
@@ -1054,7 +1064,11 @@ const filament: LocalizedArticle = {
     date: "2026",
     intro: [
       "Filament is a daily puzzle game: one puzzle a day, covering logic, probability or light maths. The answer is always a number and you get three tries. After each wrong guess, the game tells you whether to aim higher or lower and unlocks a hint.",
-      "I designed, built, shipped and promoted it on my own, in French and English, at playfilament.com.",
+      [
+        { text: "I designed, built, shipped and promoted it on my own, in French and English, at " },
+        { text: "playfilament.com", href: externalUrls.filamentSite },
+        { text: "." },
+      ],
     ],
     sections: [
       {

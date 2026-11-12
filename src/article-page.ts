@@ -47,7 +47,9 @@ export function renderArticlePage(slug: ArticleSlug, language: Language): string
     authorHref: localizedPath("/", language),
     date: content.date,
   });
-  const intro = ArticleParagraphs(content.intro);
+  const intro = content.intro
+    .map((paragraph) => typeof paragraph === "string" ? ArticleParagraphs([paragraph]) : ArticleRichParagraph(paragraph))
+    .join("");
   const indexedSections = content.sections.filter((section) => section.index);
   const sectionIndex = indexedSections.length > 0
     ? ArticleSectionIndex({
