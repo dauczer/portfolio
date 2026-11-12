@@ -3,7 +3,7 @@ import "./styles.css";
 import "./editorial.css";
 
 import { renderArticlePage } from "./article-page";
-import { articles } from "./article-content";
+import { articles, introText } from "./article-content";
 import { copy, documentTitles, externalUrls, footerLinks, projects, type Language } from "./content";
 import { mountFootballScout } from "./football-scout";
 import { mountFrenchRapRag } from "./french-rap-rag";
@@ -110,7 +110,7 @@ function updateMetadata(route: Route, language: Language): void {
       ? documentTitles[language]
       : language === "fr" ? "Page introuvable — Alex Daucourt" : "Page not found — Alex Daucourt";
   const description = isArticle
-    ? articles[route.slug][language].intro[0]
+    ? introText(articles[route.slug][language].intro[0])
     : language === "fr"
       ? "Ingénieur data et automatisation spécialisé en Python, SQL, intégrations de données et outils internes."
       : "Data and automation engineer focused on Python, SQL, data integrations and useful internal tools.";
