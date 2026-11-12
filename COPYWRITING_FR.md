@@ -31,11 +31,12 @@ Je travaille surtout avec Python et SQL pour automatiser des tâches et rendre l
 000 Automatisation rapports
 001 Pipeline data LoL
 002 Scout football
-003 Modèle fraude Tobit
-004 Suivi de tickets
-005 RAG rap français
-006 Projets académiques
-007 Portfolio macOS — lien externe : https://playground.alexdaucourt.dev
+003 Filament
+004 Modèle fraude Tobit
+005 Suivi de tickets
+006 RAG rap français
+007 Projets académiques
+008 Portfolio macOS — lien externe : https://playground.alexdaucourt.dev
 
 ## Pied de page
 
@@ -466,6 +467,89 @@ La préparation ajoutait notamment la distance au stade Maracanã et au Christ R
 L'analyse SHAP montrait que la distance au Maracanã et le quartier faisaient partie des variables les plus influentes selon la classe de prix. Le type de logement et sa capacité contribuaient également aux prédictions.
 
 Le [rapport académique archivé](/reports/rio-airbnb.pdf) présente la préparation des données, la comparaison des modèles et l'analyse d'interprétabilité.
+
+---
+
+<!-- page:filament -->
+# Filament
+
+**Route :** `/work/filament`  
+**Auteur affiché :** Alex Daucourt  
+**Date affichée :** 2026
+
+## Introduction
+
+Filament est un jeu d'énigmes quotidiennes : une énigme par jour, en logique, probabilités ou petites maths. La réponse est toujours un nombre et on a trois essais. Après chaque erreur, le jeu indique s'il faut viser plus haut ou plus bas et débloque un indice.
+
+Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur playfilament.com.
+
+> **Texte alternatif de l’image :** Deux écrans de Filament sur mobile : l'énigme du jour et l'écran des règles
+>
+> Fichier : `/project-images/filament-screens.png`
+
+## Le pari
+
+Un jeu quotidien vit ou meurt sur une seule question : est-ce que les gens reviennent le lendemain ?
+
+Je voulais y répondre avec de vrais joueurs le plus tôt possible, et pour le moins cher possible.
+
+## Pourquoi le web
+
+Le format naturel d'un jeu quotidien, c'est une app mobile. Mais publier sur l'App Store demande un compte développeur payant, une review à chaque version et une fiche store, avant même de savoir si quelqu'un veut jouer.
+
+J'ai donc lancé Filament comme une application web. Un lien suffit pour jouer, sans installation. Une nouvelle version est en ligne en quelques minutes, et chaque partie est mesurée dès le premier jour.
+
+## Ce que j'ai construit
+
+- Une application React (Vite) hébergée sur Cloudflare Pages, pensée d'abord pour le mobile, en français et en anglais.
+- Un backend Supabase : Postgres, fonctions RPC pour servir l'énigme du jour, migrations versionnées et purge automatique des anciennes données avec pg_cron.
+- Un suivi des sources : chaque lien partagé (reel, post Reddit) porte son propre paramètre, enregistré avec chaque réponse.
+- Des vues SQL qui calculent la rétention à J1 et J7 par cohorte de premier jour de jeu, globalement et par canal.
+
+- Une vérification des réponses côté serveur : le navigateur ne reçoit jamais la réponse avant la fin de la partie. Chaque essai passe par une fonction Supabase qui compare la réponse et compte les tentatives elle-même. La solution n'est renvoyée qu'après une victoire ou le troisième essai, et la clé publique ne peut lire aucune table, seulement appeler ces fonctions.
+
+## Faire venir des joueurs
+
+Je n'ai payé aucune publicité. Toute l'acquisition est venue de contenu :
+
+- Un pipeline de reels en motion design générés par code, une vidéo par énigme, publiés sur Instagram, TikTok et YouTube Shorts. Un reel Instagram a dépassé 50 000 vues et un autre 32 000.
+- Des posts Reddit sur des communautés d'énigmes et de jeux, chacun avec son propre lien suivi.
+
+## Les chiffres
+
+En un mois, du 12 octobre au 11 novembre 2026 :
+
+- 165 joueurs, 222 parties et 453 réponses sur 30 énigmes ;
+- 70 % des parties résolues, dont la moitié dès le premier essai ;
+- 81 % des joueurs venus d'Instagram, 12 % de Reddit ;
+- une rétention d'environ 5 % à J1 et 2 % à J7.
+
+## Ce que les chiffres m'ont appris
+
+L'acquisition fonctionnait : le jour où le reel à 50 000 vues est sorti, 63 nouveaux joueurs sont arrivés, plus d'un tiers du total. Les énigmes aussi : sept parties sur dix se terminaient par une bonne réponse.
+
+Mais presque personne ne revenait le lendemain. Des dizaines de milliers de vues donnaient quelques dizaines de joueurs, et ces joueurs ne prenaient pas l'habitude. Pour un jeu quotidien, c'est le seul chiffre qui compte.
+
+J'ai donc arrêté le marketing plutôt que de continuer à produire de l'attention qui ne se transformait pas en joueurs réguliers. Le test n'a coûté ni compte développeur ni budget publicitaire, seulement du temps.
+
+## Aujourd'hui
+
+Le site [playfilament.com](https://playfilament.com) reste en ligne en mode infini : les énigmes déjà publiées tournent en boucle, sans nouveau contenu à produire. Le jeu reste jouable sans demander de maintenance.
+
+## Limites connues
+
+- L'identifiant joueur est généré dans le navigateur : en vidant son stockage, on peut rejouer une énigme ou perdre exprès pour voir la solution. C'est le niveau de protection habituel des jeux quotidiens sans compte.
+- Un mois de données et 165 joueurs : les taux de rétention restent indicatifs, surtout par canal.
+
+## Ce que j'en retiens
+
+C'est le projet où j'ai tenu tous les rôles : produit, développement, contenu, acquisition et analyse.
+
+Il m'a surtout appris à formuler une hypothèse produit mesurable, à choisir le moyen le moins cher de la tester, puis à accepter la réponse des données, même quand ce n'est pas celle que j'espérais.
+
+## Note finale
+
+Projet personnel — code non public.
 
 ---
 
