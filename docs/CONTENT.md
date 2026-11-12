@@ -10,11 +10,12 @@ I use Python and SQL to turn messy data and repetitive workflows into useful too
 000 Report Automation
 001 LoL Data Pipeline
 002 Football Scout Agent
-003 Tobit Fraud Model
-004 Ticket Workflow
-005 French Rap RAG
-006 Academic Projects
-007 macOS Portfolio
+003 Filament
+004 Tobit Fraud Model
+005 Ticket Workflow
+006 French Rap RAG
+007 Academic Projects
+008 macOS Portfolio
 
 Footer:
 LinkedIn
@@ -34,5 +35,6 @@ FR / EN
 /work/ticket-workflow-prototype
 /work/tobit-fraud-targeting
 /work/academic-projects
+/work/filament
 macOS Portfolio:
 external link to playground.alexdaucourt.dev

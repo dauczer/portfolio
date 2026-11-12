@@ -8,6 +8,7 @@ export const articleSlugs = [
   "ticket-workflow-prototype",
   "tobit-fraud-targeting",
   "academic-projects",
+  "filament",
 ] as const;
 
 export type ArticleSlug = (typeof articleSlugs)[number];
@@ -938,6 +939,226 @@ const ticketWorkflowPrototype: LocalizedArticle = {
   },
 };
 
+const filament: LocalizedArticle = {
+  fr: {
+    title: projectTitles.filament.fr,
+    date: "2026",
+    intro: [
+      "Filament est un jeu d'énigmes quotidiennes : une énigme par jour, en logique, probabilités ou petites maths. La réponse est toujours un nombre et on a trois essais. Après chaque erreur, le jeu indique s'il faut viser plus haut ou plus bas et débloque un indice.",
+      "Je l'ai conçu, développé, mis en production et promu seul, en français et en anglais, sur playfilament.com.",
+    ],
+    sections: [
+      {
+        title: "Le pari",
+        blocks: [
+          { type: "paragraph", text: "Un jeu quotidien vit ou meurt sur une seule question : est-ce que les gens reviennent le lendemain ?" },
+          { type: "paragraph", text: "Je voulais y répondre avec de vrais joueurs le plus tôt possible, et pour le moins cher possible." },
+          { type: "image", src: "/project-images/filament-screens.png", alt: "Deux écrans de Filament sur mobile : l'énigme du jour et l'écran des règles" },
+        ],
+      },
+      {
+        title: "Pourquoi le web",
+        blocks: [
+          { type: "paragraph", text: "Le format naturel d'un jeu quotidien, c'est une app mobile. Mais publier sur l'App Store demande un compte développeur payant, une review à chaque version et une fiche store, avant même de savoir si quelqu'un veut jouer." },
+          { type: "paragraph", text: "J'ai donc lancé Filament comme une application web. Un lien suffit pour jouer, sans installation. Une nouvelle version est en ligne en quelques minutes, et chaque partie est mesurée dès le premier jour." },
+        ],
+      },
+      {
+        title: "Ce que j'ai construit",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Une application React (Vite) hébergée sur Cloudflare Pages, pensée d'abord pour le mobile, en français et en anglais.",
+              "Un backend Supabase : Postgres, fonctions RPC pour servir l'énigme du jour, migrations versionnées et purge automatique des anciennes données avec pg_cron.",
+              "Une vérification des réponses côté serveur : le navigateur ne reçoit jamais la réponse avant la fin de la partie. Chaque essai passe par une fonction Supabase qui compare la réponse et compte les tentatives elle-même. La solution n'est renvoyée qu'après une victoire ou le troisième essai, et la clé publique ne peut lire aucune table, seulement appeler ces fonctions.",
+              "Un suivi des sources : chaque lien partagé (reel, post Reddit) porte son propre paramètre, enregistré avec chaque réponse.",
+              "Des vues SQL qui calculent la rétention à J1 et J7 par cohorte de premier jour de jeu, globalement et par canal.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Faire venir des joueurs",
+        blocks: [
+          { type: "paragraph", text: "Je n'ai payé aucune publicité. Toute l'acquisition est venue de contenu :" },
+          {
+            type: "list",
+            items: [
+              "Un pipeline de reels en motion design générés par code, une vidéo par énigme, publiés sur Instagram, TikTok et YouTube Shorts. Un reel Instagram a dépassé 50 000 vues et un autre 32 000.",
+              "Des posts Reddit sur des communautés d'énigmes et de jeux, chacun avec son propre lien suivi.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Les chiffres",
+        blocks: [
+          { type: "paragraph", text: "En un mois, du 12 octobre au 11 novembre 2026 :" },
+          {
+            type: "list",
+            items: [
+              "165 joueurs, 222 parties et 453 réponses sur 30 énigmes ;",
+              "70 % des parties résolues, dont la moitié dès le premier essai ;",
+              "81 % des joueurs venus d'Instagram, 12 % de Reddit ;",
+              "une rétention d'environ 5 % à J1 et 2 % à J7.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Ce que les chiffres m'ont appris",
+        blocks: [
+          { type: "paragraph", text: "L'acquisition fonctionnait : le jour où le reel à 50 000 vues est sorti, 63 nouveaux joueurs sont arrivés, plus d'un tiers du total. Les énigmes aussi : sept parties sur dix se terminaient par une bonne réponse." },
+          { type: "paragraph", text: "Mais presque personne ne revenait le lendemain. Des dizaines de milliers de vues donnaient quelques dizaines de joueurs, et ces joueurs ne prenaient pas l'habitude. Pour un jeu quotidien, c'est le seul chiffre qui compte." },
+          { type: "paragraph", text: "J'ai donc arrêté le marketing plutôt que de continuer à produire de l'attention qui ne se transformait pas en joueurs réguliers. Le test n'a coûté ni compte développeur ni budget publicitaire, seulement du temps." },
+        ],
+      },
+      {
+        title: "Aujourd'hui",
+        blocks: [
+          {
+            type: "rich-paragraph",
+            segments: [
+              { text: "Le site " },
+              { text: "playfilament.com", href: externalUrls.filamentSite },
+              { text: " reste en ligne en mode infini : les énigmes déjà publiées tournent en boucle, sans nouveau contenu à produire. Le jeu reste jouable sans demander de maintenance." },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Limites connues",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "L'identifiant joueur est généré dans le navigateur : en vidant son stockage, on peut rejouer une énigme ou perdre exprès pour voir la solution. C'est le niveau de protection habituel des jeux quotidiens sans compte.",
+              "Un mois de données et 165 joueurs : les taux de rétention restent indicatifs, surtout par canal.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Ce que j'en retiens",
+        blocks: [
+          { type: "paragraph", text: "C'est le projet où j'ai tenu tous les rôles : produit, développement, contenu, acquisition et analyse." },
+          { type: "paragraph", text: "Il m'a surtout appris à formuler une hypothèse produit mesurable, à choisir le moyen le moins cher de la tester, puis à accepter la réponse des données, même quand ce n'est pas celle que j'espérais." },
+        ],
+      },
+    ],
+    note: "Projet personnel — code non public.",
+  },
+  en: {
+    title: projectTitles.filament.en,
+    date: "2026",
+    intro: [
+      "Filament is a daily puzzle game: one puzzle a day, covering logic, probability or light maths. The answer is always a number and you get three tries. After each wrong guess, the game tells you whether to aim higher or lower and unlocks a hint.",
+      "I designed, built, shipped and promoted it on my own, in French and English, at playfilament.com.",
+    ],
+    sections: [
+      {
+        title: "The bet",
+        blocks: [
+          { type: "paragraph", text: "A daily game lives or dies on a single question: do people come back the next day?" },
+          { type: "paragraph", text: "I wanted to answer it with real players as early and as cheaply as possible." },
+          { type: "image", src: "/project-images/filament-screens-en.png", alt: "Two Filament screens on mobile: the daily puzzle and the rules screen" },
+        ],
+      },
+      {
+        title: "Why the web",
+        blocks: [
+          { type: "paragraph", text: "The natural format for a daily game is a mobile app. But publishing on the App Store means a paid developer account, a review for every release and a store listing, before even knowing whether anyone wants to play." },
+          { type: "paragraph", text: "So I launched Filament as a web app. A link is all it takes to play, with nothing to install. A new version goes live in minutes, and every game is measured from day one." },
+        ],
+      },
+      {
+        title: "What I built",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "A mobile-first React (Vite) app hosted on Cloudflare Pages, in French and English.",
+              "A Supabase backend: Postgres, RPC functions that serve the daily puzzle, versioned migrations and automatic purging of old data with pg_cron.",
+              "Server-side answer checking: the browser never receives the answer before the game ends. Every guess goes through a Supabase function that checks it and counts attempts itself. The solution is only returned after a win or the third try, and the public key cannot read any table, only call these functions.",
+              "Source tracking: every shared link (reel, Reddit post) carries its own parameter, stored with each guess.",
+              "SQL views that compute day-1 and day-7 retention by first-play cohort, overall and per channel.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Bringing players in",
+        blocks: [
+          { type: "paragraph", text: "I paid for no advertising. All acquisition came from content:" },
+          {
+            type: "list",
+            items: [
+              "A pipeline of code-generated motion design reels, one video per puzzle, published on Instagram, TikTok and YouTube Shorts. One Instagram reel passed 50,000 views and another 32,000.",
+              "Reddit posts in puzzle and gaming communities, each with its own tracked link.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The numbers",
+        blocks: [
+          { type: "paragraph", text: "Over one month, from October 12 to November 11, 2026:" },
+          {
+            type: "list",
+            items: [
+              "165 players, 222 games and 453 guesses across 30 puzzles;",
+              "70% of games solved, half of them on the first try;",
+              "81% of players came from Instagram, 12% from Reddit;",
+              "retention of about 5% on day 1 and 2% on day 7.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "What the numbers taught me",
+        blocks: [
+          { type: "paragraph", text: "Acquisition worked: on the day the 50,000-view reel came out, 63 new players arrived, more than a third of the total. The puzzles worked too: seven games out of ten ended with a correct answer." },
+          { type: "paragraph", text: "But almost nobody came back the next day. Tens of thousands of views turned into a few dozen players, and those players did not build a habit. For a daily game, that is the only number that matters." },
+          { type: "paragraph", text: "So I stopped marketing rather than keep producing attention that did not turn into regular players. The test cost no developer account and no ad budget, only time." },
+        ],
+      },
+      {
+        title: "Today",
+        blocks: [
+          {
+            type: "rich-paragraph",
+            segments: [
+              { text: "playfilament.com", href: externalUrls.filamentSite },
+              { text: " stays online in infinite mode: the puzzles already published loop, with no new content to produce. The game stays playable without needing maintenance." },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Known limitations",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "The player ID is generated in the browser: clearing storage lets someone replay a puzzle or lose on purpose to see the solution. That is the usual level of protection for daily games without accounts.",
+              "One month of data and 165 players: retention rates are indicative, especially per channel.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "What I take away",
+        blocks: [
+          { type: "paragraph", text: "This is the project where I held every role: product, development, content, acquisition and analysis." },
+          { type: "paragraph", text: "Above all, it taught me to frame a measurable product hypothesis, pick the cheapest way to test it, then accept the data's answer, even when it is not the one I hoped for." },
+        ],
+      },
+    ],
+    note: "Personal project — code not public.",
+  },
+};
+
 export const articles: Record<ArticleSlug, LocalizedArticle> = {
   "lol-weekly-data-pipeline": lolWeeklyDataPipeline,
   "football-scout-agent": footballScoutAgent,
@@ -946,4 +1167,5 @@ export const articles: Record<ArticleSlug, LocalizedArticle> = {
   "ticket-workflow-prototype": ticketWorkflowPrototype,
   "tobit-fraud-targeting": tobitFraudTargeting,
   "academic-projects": academicProjects,
+  filament,
 };

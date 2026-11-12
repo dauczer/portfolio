@@ -38,6 +38,10 @@ export const projectTitles = {
     en: "Academic Projects",
     fr: "Projets académiques",
   },
+  filament: {
+    en: "Filament",
+    fr: "Filament",
+  },
   macosPortfolio: {
     en: "macOS Portfolio",
     fr: "Portfolio macOS",
@@ -46,6 +50,7 @@ export const projectTitles = {
 
 export const externalUrls = {
   canonicalSite: "https://alexdaucourt.dev",
+  filamentSite: "https://playfilament.com",
   email: "alexdaucourt@gmail.com",
   footballScoutApi: "https://scout-agent-jkrv.onrender.com",
   frenchRapRagApi: "https://music-rag.onrender.com",
@@ -93,12 +98,13 @@ export const projects: readonly Project[] = [
   { index: "000", title: projectTitles.cafReportAutomation, href: "/work/caf-report-automation" },
   { index: "001", title: projectTitles.lolWeeklyDataPipeline, href: "/work/lol-weekly-data-pipeline" },
   { index: "002", title: projectTitles.footballScoutAgent, href: "/work/football-scout-agent" },
-  { index: "003", title: projectTitles.tobitFraudTargeting, href: "/work/tobit-fraud-targeting" },
-  { index: "004", title: projectTitles.ticketWorkflowPrototype, href: "/work/ticket-workflow-prototype" },
-  { index: "005", title: projectTitles.frenchRapRag, href: "/work/french-rap-rag" },
-  { index: "006", title: projectTitles.academicProjects, href: "/work/academic-projects" },
+  { index: "003", title: projectTitles.filament, href: "/work/filament" },
+  { index: "004", title: projectTitles.tobitFraudTargeting, href: "/work/tobit-fraud-targeting" },
+  { index: "005", title: projectTitles.ticketWorkflowPrototype, href: "/work/ticket-workflow-prototype" },
+  { index: "006", title: projectTitles.frenchRapRag, href: "/work/french-rap-rag" },
+  { index: "007", title: projectTitles.academicProjects, href: "/work/academic-projects" },
   {
-    index: "007",
+    index: "008",
     title: projectTitles.macosPortfolio,
     href: "https://playground.alexdaucourt.dev",
     external: true,
