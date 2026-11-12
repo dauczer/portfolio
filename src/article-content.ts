@@ -1062,7 +1062,7 @@ const filament: LocalizedArticle = {
         blocks: [
           { type: "paragraph", text: "A daily game lives or dies on a single question: do people come back the next day?" },
           { type: "paragraph", text: "I wanted to answer it with real players as early and as cheaply as possible." },
-          { type: "image", src: "/project-images/filament-screens.png", alt: "Two Filament screens on mobile: the daily puzzle and the rules screen" },
+          { type: "image", src: "/project-images/filament-screens-en.png", alt: "Two Filament screens on mobile: the daily puzzle and the rules screen" },
         ],
       },
       {
